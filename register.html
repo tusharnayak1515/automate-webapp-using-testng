@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            width: 100%;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .form {
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        input {
+            padding: 0.5rem 1rem;
+            outline: none;
+        }
+
+        button {
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+    <form class="form" onsubmit="onRegister(event)">
+        <h2>Register</h2>
+        <input type="text" name="name" id="name" placeholder="Name" required />
+        <input type="email" name="email" id="email" placeholder="Email" required />
+        <input type="password" name="password" id="password" placeholder="Password" required />
+        <button type="submit">Register</button>
+    </form>
+    
+    <script>
+        const onRegister = (e)=> {
+            e.preventDefault();
+            const form = document.querySelector(".form");
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const emailRegex = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/;
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])/;
+
+            if(name.replace("/\s/g","").trim().length > 0 && emailRegex.test(email) && passwordRegex.test(password)) {
+                alert("Registration successful");
+                form.reset();
+            }
+            else if(name.replace("/\s/g","").trim().length === 0) {
+                alert("Name cannot be empty");
+            }
+            else if(!emailRegex.test(email)) {
+                alert("Invalid email");
+            }
+            else {
+                alert("Enter a strong password");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="RegisterTest(failed)">
+    <classes>
+      <class name="com.Mytest">
+        <methods>
+          <include name="TestRegister"/>
+          <include name="checkStatus"/>
+          <include name="generateReport"/>
+          <include name="CloseProcess"/>
+          <include name="InitializeReport"/>
+          <include name="Setup"/>
+        </methods>
+      </class> <!-- com.Mytest -->
+    </classes>
+  </test> <!-- RegisterTest(failed) -->
+  <test thread-count="5" name="ValidLoginTest(failed)">
+    <classes>
+      <class name="com.Mytest">
+        <methods>
+          <include name="checkStatus"/>
+          <include name="generateReport"/>
+          <include name="CloseProcess"/>
+          <include name="ValidLogin"/>
+          <include name="Setup"/>
+          <include name="InitializeReport"/>
+        </methods>
+      </class> <!-- com.Mytest -->
+    </classes>
+  </test> <!-- ValidLoginTest(failed) -->
+  <test thread-count="5" name="InvalidLoginTest(failed)">
+    <classes>
+      <class name="com.Mytest">
+        <methods>
+          <include name="checkStatus"/>
+          <include name="InvalidLogin"/>
+          <include name="generateReport"/>
+          <include name="CloseProcess"/>
+          <include name="Setup"/>
+          <include name="InitializeReport"/>
+        </methods>
+      </class> <!-- com.Mytest -->
+    </classes>
+  </test> <!-- InvalidLoginTest(failed) -->
+  <test thread-count="5" name="SearchTest(failed)">
+    <classes>
+      <class name="com.Mytest">
+        <methods>
+          <include name="checkStatus"/>
+          <include name="generateReport"/>
+          <include name="CloseProcess"/>
+          <include name="InitializeReport"/>
+          <include name="Setup"/>
+          <include name="search"/>
+        </methods>
+      </class> <!-- com.Mytest -->
+    </classes>
+  </test> <!-- SearchTest(failed) -->
+  <test thread-count="5" name="AddToCartTest(failed)">
+    <classes>
+      <class name="com.Mytest">
+        <methods>
+          <include name="checkStatus"/>
+          <include name="addToCart"/>
+          <include name="generateReport"/>
+          <include name="CloseProcess"/>
+          <include name="InitializeReport"/>
+          <include name="Setup"/>
+        </methods>
+      </class> <!-- com.Mytest -->
+    </classes>
+  </test> <!-- AddToCartTest(failed) -->
+</suite> <!-- Failed suite [Suite] -->

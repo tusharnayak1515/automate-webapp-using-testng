@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyKart</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            width: 100%;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .product {
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            border: 1px solid rgb(10, 10, 56);
+            border-radius: 0.1rem;
+        }
+
+        .product img {
+            height: 200px;
+            width: 100%;
+            border: none;
+            border-radius: 0.1rem;
+        }
+
+        .product p {
+            padding: 0.5rem;
+            font-weight: 500;
+        }
+
+        .product button {
+            width: 100%;
+            padding: 0.5rem 1rem;
+            color: white;
+            border: none;
+            border-top: 1px solid rgb(10, 10, 56);
+            border-top-left-radius: 0.1rem;
+            border-top-right-radius: 0.1rem;
+            background-color: rgb(10, 10, 56);
+            cursor: pointer;
+        }
+
+        .product button:hover {
+            color: rgb(10, 10, 56);
+            background-color: white;
+            transition: all 0.2s ease-in-out;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h2>MyKart</h2>
+
+    <div class="product">
+        <img src="./pic.webp" alt="Product" />
+        <p>T-Shirt - ₹ 399</p>
+        <button id="btn" onclick="onAddToCart()">Add to Cart</button>
+    </div>
+    
+    
+    <script>
+        const onAddToCart = ()=> {
+            alert("Added to Cart");
+        }
+    </script>
+</body>
+</html>

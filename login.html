@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            width: 100%;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .form {
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        input {
+            padding: 0.5rem 1rem;
+            outline: none;
+        }
+
+        button {
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+    <form class="form" onsubmit="onLogin(event)">
+        <h2>Login</h2>
+        <input type="email" name="email" id="email" placeholder="Email" required />
+        <input type="password" name="password" id="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+    </form>
+    
+    <script>
+        const onLogin = (e)=> {
+            e.preventDefault();
+            const form = document.querySelector(".form");
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const emailRegex = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/;
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])/;
+
+            if(email === "tushar@gmail.com" && password === "Test123@") {
+                alert("Login successful");
+                form.reset();
+            }
+            else {
+                alert("Incorrect credentials");
+            }
+        }
+    </script>
+</body>
+</html>
